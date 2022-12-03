@@ -1,11 +1,11 @@
 import sys
-
 from PyQt5 import QtCore, QtWidgets
-from PyQt5.QtCore import Qt, QPropertyAnimation, QRect, QEasingCurve
+from PyQt5.QtCore import *
 from PyQt5.QtGui import QColor
-from PyQt5.QtWidgets import QMainWindow, QApplication, QDesktopWidget
+from PyQt5.QtWidgets import *
 
 from main1017 import Ui_MainWindow
+
 
 class MyMainForm(QMainWindow, Ui_MainWindow):
     def __init__(self, parent=None):
@@ -13,7 +13,7 @@ class MyMainForm(QMainWindow, Ui_MainWindow):
         self.setupUi(self)
         self.start_x = None
         self.start_y = None
-        self.anim=None
+        self.anim = None
         self.setAttribute(QtCore.Qt.WA_TranslucentBackground)
         self.setWindowFlags(Qt.FramelessWindowHint)  # 设置窗口标志：隐藏窗口边框
         self.lineEdit.setAttribute(QtCore.Qt.WA_MacShowFocusRect, 0)
@@ -45,9 +45,8 @@ class MyMainForm(QMainWindow, Ui_MainWindow):
         widget.setGraphicsEffect(effect_shadow)
 
 
-
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     myWin = MyMainForm()
-    myWin.animation_start()
+    myWin.show()
     sys.exit(app.exec_())
